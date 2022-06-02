@@ -1,25 +1,30 @@
-import logo from './logo.svg';
-import './App.css';
+import React from 'react';
+import {Routes, Route} from 'react-router-dom';
+import CensusData from './Components/CensusData';
+import CreateCensusData from './Components/CreateCensusData';
+import Home from './Components/Home';
+import {useFormik} from 'formik';
+import EditCensusData from './Components/EditCensusData';
 
-function App() {
+const App = () => {
+  const formik = useFormik({
+    initialValues: {
+      name: "",
+      age: "",
+      mother: "",
+      father: "",
+      location: "",
+      occupation: "",
+    }
+  })
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+    <Routes>
+      <Route path="/" element={<Home />} />
+      <Route path="/createCensusData" element={<CreateCensusData formik={formik}/>} />
+      <Route path="/censusData" element={<CensusData formik={formik}/>} />
+      <Route path="/editCensusData" element={<EditCensusData formik={formik}/>} />
+    </Routes>
+  )
 }
 
-export default App;
+export default App

@@ -11,3 +11,28 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+
+/* #root{
+  background-image: url('https://d1whtlypfis84e.cloudfront.net/guides/wp-content/uploads/2018/12/24170218/CD1-1024x703.png');
+  background-repeat: repeat;
+  background-position: center;
+  background-size: cover;
+} */
+
+#root{
+  background-color: rgb(249, 249, 249);
+}
+
+.container-fluid{
+  position: sticky;
+  margin-top:100px;
+  z-index: 0;
+}
+
+.navbar{
+  position: fixed;
+  top: 0;
+  right: 0;
+  left:0;
+  z-index: 1;
+}
